@@ -1,0 +1,74 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/World/HUDFPS.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Agent/Communication/UpdateMessage.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Agent.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Communication/BidMessage.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Sensors/SensorModule.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/SwarmOps/Globals.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Decision/IDecisionManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Sensors/FeauxGPS.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Exceptions/ImproperSearchBoundsException.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/NumUtils/NelderMeadSimplex/SimplexConstant.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/NumUtils/NelderMeadSimplex/RegressionResult.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/NumUtils/NelderMeadSimplex/NelderMeadSimplex.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Sensors/RotationSensor.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Sensors/Altimeter.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/FlightController/SimFlightController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/FlightController/AttitudeControl.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/FlightController/FlightControlScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/World/WorldStateManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/World/GoalZone/RectZone.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/World/GoalZone/Tile.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Communication/Packet.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Communication/Message.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Communication/ClaimMessage.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Communication/SearchedMessage.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Knowledge/KnowledgeBase.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Knowledge/BidKnowledge.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Knowledge/SearchTile.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Decision/Weight.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Decision/CostManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Decision/Cost.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/World/CameraController.cs" Line="1" Column="1" />
+      <File FileName="../../../../../Library/Messages/Attachments/1f/15/AA9004CE-9480-4D26-93E7-ABEC951EB59D/SimFlightController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/FlightController/GenericFlightController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Learning/TrialRunner.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/SwarmOps/Optimizers/DE.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/SwarmOps/Tools/Initialize.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Decision/Costs/AltGoalCost.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Decision/Costs/BatteryLifeCost.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Sensors/BatteryLifeSensor.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Decision/DecisionManagers/SimpleDecisionProblem.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/RandomOps/XorShift.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Decision/Costs/AltAltitudeCost.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Knowledge/AgentUpdate.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Communication/Sender.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Knowledge/SearchTileBid.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/FlightController/NewFlightController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Sensors/Accelerometer.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Learning/Heuristic.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/World/NetworkManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/World/ServerListener.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/SwarmOps/FitnessTrace.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/SwarmOps/FitnessTraceQuartiles.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/SwarmOps/Tools/Feasible.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Decision/Costs/AltNearnessCollisionCost.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Decision/Costs/AltitudeCost.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/World/DetectLeaksWindow.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Decision/DecisionManagers/SwarmOpsDecisionManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Sensors/ISensor.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Decision/DecisionManagers/SimpleDecisionManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/SwarmOps/Optimizer.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/SwarmOps/Problem.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Decision/Costs/CollisionCost.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Agent/Decision/Costs/NearnessCost.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/World/HUDFPS.cs" Line="45" Column="2" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

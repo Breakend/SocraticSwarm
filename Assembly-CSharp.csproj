@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{18848040-AE06-B4C9-7A44-EE0AA42D1DDB}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_6_3;UNITY_4_6;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_IL2CPP;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;UNITY5_SCRIPTING_IN_UNITY4;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_OSX</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Scripts\Agent\Agent.cs" />
+     <Compile Include="Assets\Scripts\Agent\Communication\BidMessage.cs" />
+     <Compile Include="Assets\Scripts\Agent\Communication\ClaimMessage.cs" />
+     <Compile Include="Assets\Scripts\Agent\Communication\Message.cs" />
+     <Compile Include="Assets\Scripts\Agent\Communication\Packet.cs" />
+     <Compile Include="Assets\Scripts\Agent\Communication\SearchedMessage.cs" />
+     <Compile Include="Assets\Scripts\Agent\Communication\Sender.cs" />
+     <Compile Include="Assets\Scripts\Agent\Communication\UpdateMessage.cs" />
+     <Compile Include="Assets\Scripts\Agent\Decision\Cost.cs" />
+     <Compile Include="Assets\Scripts\Agent\Decision\CostManager.cs" />
+     <Compile Include="Assets\Scripts\Agent\Decision\Costs\AltAltitudeCost.cs" />
+     <Compile Include="Assets\Scripts\Agent\Decision\Costs\AltGoalCost.cs" />
+     <Compile Include="Assets\Scripts\Agent\Decision\Costs\AltNearnessCollisionCost.cs" />
+     <Compile Include="Assets\Scripts\Agent\Decision\Costs\AltitudeCost.cs" />
+     <Compile Include="Assets\Scripts\Agent\Decision\Costs\BatteryLifeCost.cs" />
+     <Compile Include="Assets\Scripts\Agent\Decision\Costs\CollisionCost.cs" />
+     <Compile Include="Assets\Scripts\Agent\Decision\Costs\NearnessCost.cs" />
+     <Compile Include="Assets\Scripts\Agent\Decision\Costs\TileDestinationCost.cs" />
+     <Compile Include="Assets\Scripts\Agent\Decision\DecisionManagers\SimpleDecisionManager.cs" />
+     <Compile Include="Assets\Scripts\Agent\Decision\DecisionManagers\SimpleDecisionProblem.cs" />
+     <Compile Include="Assets\Scripts\Agent\Decision\DecisionManagers\SwarmOpsDecisionManager.cs" />
+     <Compile Include="Assets\Scripts\Agent\Decision\IDecisionManager.cs" />
+     <Compile Include="Assets\Scripts\Agent\Decision\Weight.cs" />
+     <Compile Include="Assets\Scripts\Agent\FlightController\AttitudeControl.cs" />
+     <Compile Include="Assets\Scripts\Agent\FlightController\Engine.cs" />
+     <Compile Include="Assets\Scripts\Agent\FlightController\FlightControlScript.cs" />
+     <Compile Include="Assets\Scripts\Agent\FlightController\GenericFlightController.cs" />
+     <Compile Include="Assets\Scripts\Agent\FlightController\NewFlightController.cs" />
+     <Compile Include="Assets\Scripts\Agent\FlightController\SimFlightController.cs" />
+     <Compile Include="Assets\Scripts\Agent\Knowledge\AgentUpdate.cs" />
+     <Compile Include="Assets\Scripts\Agent\Knowledge\BidKnowledge.cs" />
+     <Compile Include="Assets\Scripts\Agent\Knowledge\KnowledgeBase.cs" />
+     <Compile Include="Assets\Scripts\Agent\Knowledge\SearchTile.cs" />
+     <Compile Include="Assets\Scripts\Agent\Knowledge\SearchTileBid.cs" />
+     <Compile Include="Assets\Scripts\Agent\Sensors\Accelerometer.cs" />
+     <Compile Include="Assets\Scripts\Agent\Sensors\Altimeter.cs" />
+     <Compile Include="Assets\Scripts\Agent\Sensors\BatteryLifeSensor.cs" />
+     <Compile Include="Assets\Scripts\Agent\Sensors\FeauxGPS.cs" />
+     <Compile Include="Assets\Scripts\Agent\Sensors\ISensor.cs" />
+     <Compile Include="Assets\Scripts\Agent\Sensors\RotationSensor.cs" />
+     <Compile Include="Assets\Scripts\Agent\Sensors\SensorModule.cs" />
+     <Compile Include="Assets\Scripts\Exceptions\ImproperSearchBoundsException.cs" />
+     <Compile Include="Assets\Scripts\Learning\Heuristic.cs" />
+     <Compile Include="Assets\Scripts\Learning\TrialRunner.cs" />
+     <Compile Include="Assets\Scripts\NumUtils\Common\Vector.cs" />
+     <Compile Include="Assets\Scripts\NumUtils\NelderMeadSimplex\NelderMeadSimplex.cs" />
+     <Compile Include="Assets\Scripts\NumUtils\NelderMeadSimplex\RegressionResult.cs" />
+     <Compile Include="Assets\Scripts\NumUtils\NelderMeadSimplex\SimplexConstant.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\ByteStream.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\ByteStreamAsync.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\CMWC4096.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\Circle.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\Disk.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\Gauss.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\HtmlDownload.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\Index.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\IndexDistribution.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\KISS.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\MWC256.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\MersenneTwister.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\Multi.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\Ran2.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\RanInt32.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\RanQD.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\RanSystem.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\RanUInt32.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\RanUInt32Array.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\Random.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\RandomDotOrg.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\RandomDotOrgAsync.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\Set.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\Sphere.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\SumUInt32.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\Switcher.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\XorShift.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Extensions\Enumerable.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\FeasibleTrace.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\FitnessPrint.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\FitnessTrace.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\FitnessTraceMean.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\FitnessTraceQuartiles.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Globals.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\LogSolutions.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Optimizer.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\OptimizerWrapper.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Optimizers\DE.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Optimizers\GD.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Optimizers\LUS.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Optimizers\MESH.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Optimizers\MOL.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Optimizers\MetaFitness.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Optimizers\PS.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Optimizers\PSO.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Optimizers\RND.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Problem.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\ProblemIndex.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\ProblemWrapper.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Problems\Ackley.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Problems\Benchmark.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Problems\Benchmarks.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Problems\CurveFitting.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Problems\CurveFittingExp.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Problems\CurveFittingLin.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Problems\Griewank.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Problems\Mangler.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Problems\Penalized.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Problems\Penalized1.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Problems\Penalized2.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Problems\QuarticNoise.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Problems\Rastrigin.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Problems\Rosenbrock.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Problems\Schwefel12.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Problems\Schwefel221.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Problems\Schwefel222.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Problems\Sphere.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Problems\SphereSleep.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Problems\Step.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Repeat.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\RepeatMin.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\RepeatSum.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Result.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Solution.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Statistics.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Statistics\Quartiles.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Statistics\StatisticsAccumulator.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Tools\ArrayToString.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Tools\Bound.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Tools\Denormalize.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Tools\Feasible.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Tools\FormatNumber.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Tools\Initialize.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Tools\Matrix.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Tools\Norm.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Tools\Print.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Tools\Sample.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Tools\Tools.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\WeightedProblem.cs" />
+     <Compile Include="Assets\Scripts\World\CameraController.cs" />
+     <Compile Include="Assets\Scripts\World\DetectLeaksWindow.cs" />
+     <Compile Include="Assets\Scripts\World\GoalZone\RectZone.cs" />
+     <Compile Include="Assets\Scripts\World\GoalZone\Tile.cs" />
+     <Compile Include="Assets\Scripts\World\HUDFPS.cs" />
+     <Compile Include="Assets\Scripts\World\NetworkManager.cs" />
+     <Compile Include="Assets\Scripts\World\ServerListener.cs" />
+     <Compile Include="Assets\Scripts\World\WorldStateManager.cs" />
+     <None Include="Assets\Scripts\RandomOps\ToDo.txt" />
+     <None Include="Assets\Shaders\TerrBumpAddPass.shader" />
+     <None Include="Assets\Scripts\RandomOps\RandomOps.cd" />
+     <None Include="Assets\Shaders\TerrBumpFirstPass.shader" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.3/UnityEngine.UI.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
