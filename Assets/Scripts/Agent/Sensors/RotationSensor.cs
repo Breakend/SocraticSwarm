@@ -10,13 +10,13 @@ public class RotationSensor : ISensor {
 	// Use this for initialization
 	public RotationSensor (Transform agentTransform) {
 		this.agentTransform = agentTransform;
-		currentRotation = agentTransform.rigidbody.rotation;
+		currentRotation = agentTransform.GetComponent<Rigidbody>().rotation;
 		eulers = currentRotation.eulerAngles;
 	}
 	
 	// Update is called once per frame
 	void ISensor.Update () {
-		currentRotation = agentTransform.rigidbody.rotation;
+		currentRotation = agentTransform.GetComponent<Rigidbody>().rotation;
 		eulers = currentRotation.eulerAngles;
 	}
 

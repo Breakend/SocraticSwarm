@@ -11,7 +11,7 @@ public class WorldStateManager : MonoBehaviour {
 
 	private ArrayList toRm = new ArrayList ();
 	public GameObject agentPrefab;
-	private static int AgentsToGenerate = 5;
+	private static int AgentsToGenerate = 10;
 
 	public static bool trialOngoing = false;
 	public static bool taskCompleted = false;

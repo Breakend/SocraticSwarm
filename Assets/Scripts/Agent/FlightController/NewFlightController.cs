@@ -10,6 +10,11 @@ public class NewFlightController {
 	public Vector3 velocity;
 	public Vector3 accleration;
 	public bool newDestination;
+	public const bool perturbDynamicsVel = false;
+	public const bool perturbDynamicsAcc = false;
+	public const float perturbStdAcc = 2.5f;
+	public const float perturbStdVel = 30.0f;
+	public System.Random rand = new System.Random();
 
 	private Vector3 distanceVector;
 
@@ -31,6 +36,12 @@ public class NewFlightController {
 	public NewFlightController (GameObject agentObject, SensorModule sensorModule) {
 		this.agentObject = agentObject;
 		this.sensorModule = sensorModule;
+		if (perturbDynamicsVel) {
+			MAX_VELOCITY += (float)(rand.NextDouble () - .5) * perturbStdVel;
+		}
+		if (perturbDynamicsAcc) {
+			acclScale += (float) (rand.NextDouble () - .5) * perturbStdAcc * Vector3.one;
+		}
 	}
 
 	public void SetNextDestination(Vector3 dest){

@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class AltAltitudeCost : Cost {
-	// public static double[] DEFAULT_WEIGHT_COSTS = {.01f};
-	public static double[] DEFAULT_WEIGHT_COSTS = {0.176022469997406};
+        public static double[] DEFAULT_WEIGHT_COSTS = {0.176022469997406};
 
 	public const float MAX_ALT = 300.0f;
 
@@ -16,10 +15,11 @@ public class AltAltitudeCost : Cost {
 	public override double GetCostValue(){
 		float cost = 0.0f;
 		float altitude = GetRelativeAltitudeAtPoint (this.desiredPosition);
+
 		if (altitude < MAX_ALT * .2)
-			cost = Mathf.Pow (((altitude) / (MAX_ALT * .2f) - 1.0f), 2.0f);
+			cost = Mathf.Pow (1.0f - ((altitude) / (MAX_ALT * .2f) ), 2.0f);
 		else
-			cost = Mathf.Pow ((altitude-MAX_ALT*.2f)/(MAX_ALT*.8f), 2.0f);
+			cost = Mathf.Pow ((altitude-(MAX_ALT*.2f))/(MAX_ALT), 2.0f) * 2.0f;
 
 		return Mathf.Min (cost, 1.0f);
 	}

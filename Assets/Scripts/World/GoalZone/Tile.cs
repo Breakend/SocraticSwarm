@@ -39,8 +39,8 @@ public class Tile {
 		tex.Apply();
 		if(texture) UnityEngine.Object.Destroy (texture);
 		texture = tex;
-		this.gameObject.renderer.material.mainTexture = tex;
-		this.gameObject.renderer.material.color = Color.yellow;
+		this.gameObject.GetComponent<Renderer>().material.mainTexture = tex;
+		this.gameObject.GetComponent<Renderer>().material.color = Color.yellow;
 	}
 
 	// Called when an agent has searched the tile
@@ -50,8 +50,8 @@ public class Tile {
 		tex.Apply();
 		if(texture) UnityEngine.Object.Destroy (texture);
 		texture = tex;
-		this.gameObject.renderer.material.mainTexture = tex;
-		this.gameObject.renderer.material.color = Color.green;
+		this.gameObject.GetComponent<Renderer>().material.mainTexture = tex;
+		this.gameObject.GetComponent<Renderer>().material.color = Color.green;
 		this.searched = true;
 	}
 
@@ -61,8 +61,8 @@ public class Tile {
 		tex.Apply();
 		if(texture) UnityEngine.Object.Destroy (texture);
 		texture = tex;
-		this.gameObject.renderer.material.mainTexture = tex;
-		this.gameObject.renderer.material.color = Color.yellow;
+		this.gameObject.GetComponent<Renderer>().material.mainTexture = tex;
+		this.gameObject.GetComponent<Renderer>().material.color = Color.yellow;
 		this.claimed = true;
 	}
 
@@ -72,8 +72,8 @@ public class Tile {
 		tex.Apply();
 		if(texture) UnityEngine.Object.Destroy (texture);
 		texture = tex;
-		this.gameObject.renderer.material.mainTexture = tex;
-		this.gameObject.renderer.material.color = Color.red;
+		this.gameObject.GetComponent<Renderer>().material.mainTexture = tex;
+		this.gameObject.GetComponent<Renderer>().material.color = Color.red;
 		this.claimed = false;
 		this.searched = false;
 	}

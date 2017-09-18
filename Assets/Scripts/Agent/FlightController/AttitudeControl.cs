@@ -79,7 +79,7 @@ public class AttitudeControl : MonoBehaviour {
 
 	void Start(){
 
-		myRotation = this.gameObject.rigidbody.rotation;
+		myRotation = this.gameObject.GetComponent<Rigidbody>().rotation;
 
 		targetRot = new Quaternion (0, 0, 0, 1);
 		yawTarget = new Quaternion (0, 0, 0, 1);

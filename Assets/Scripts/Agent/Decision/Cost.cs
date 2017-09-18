@@ -27,6 +27,10 @@ public class Cost : System.Object {
 		this.costName = name;
 	}
 
+	public bool satisfiesAsConstraint(float comparedValue){
+		return true;
+	}
+
 	public Cost(KnowledgeBase kb, SensorModule sm){
 		weights = new ArrayList ();
 		mainWeight = new Weight ();

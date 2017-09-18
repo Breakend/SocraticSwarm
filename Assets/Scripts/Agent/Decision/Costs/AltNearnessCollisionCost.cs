@@ -7,7 +7,7 @@ public class AltNearnessCollisionCost : Cost {
 	public static double[] DEFAULT_WEIGHT_COSTS = { 0.352098226547241, 0.319006323814392};
 
 	// public static double[] DEFAULT_WEIGHT_COSTS = {.4, .4};
-	public const double COMMUNICATION_RANGE = 300;
+	public const double COMMUNICATION_RANGE = 200;
 	public const int NEIGHBOURHOOD = 7;
 	public const double MAX_FARNESS_PENALTY = .75;
 

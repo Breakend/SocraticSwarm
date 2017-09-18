@@ -20,7 +20,7 @@ public class TrialRunner : MonoBehaviour {
 	private float C_I;
 	private float[] temperatures;
 	private double sum_eval;
-	private const bool TO_LEARN = false;
+	private const bool TO_LEARN = true;
 	private string logfiletimestamp;
 
 	private double global_minimum = double.MaxValue;
@@ -29,15 +29,16 @@ public class TrialRunner : MonoBehaviour {
 	// Attach this as script i guess
 	public WorldStateManager worldStateManager;
 
-	private int maxTrials = 10;
+	private int maxTrials = 50;
 	private ArrayList allEvals = new ArrayList();
 	private ArrayList allWeightsAttempted = new ArrayList();
 	private ArrayList allTimes = new ArrayList();
 	private ArrayList allCollisions = new ArrayList();
 	private ArrayList allTilesSearched = new ArrayList();
-	public static float MAX_TRIAL_RUN_TIME = 300.0f;
+	public static float MAX_TRIAL_RUN_TIME = 200.0f;
 	public static System.Type[] costsToUse = { System.Type.GetType ("AltAltitudeCost"),
 		System.Type.GetType ("AltNearnessCollisionCost"),
+		System.Type.GetType ("CollisionCost"),
 		System.Type.GetType ("AltGoalCost")};
 
 	ArrayList trialWeights;
@@ -84,11 +85,11 @@ public class TrialRunner : MonoBehaviour {
 	}
 
 	public void CoolOffParameterTempsModifiedASA(int i){
-		temperatures[i] = ti_os[i] * Mathf.Pow(.95f, numOfTrialsCompleted/(float)temperatures.Length);
+		temperatures[i] = ti_os[i] * Mathf.Pow(.9f, numOfTrialsCompleted);
 	}
 
 	public void CoolOffCostTempsModifiedASA(){
-		temperature = CostStartingTemp * Mathf.Pow(.95f, numOfTrialsCompleted/(float)temperatures.Length);
+		temperature = CostStartingTemp * Mathf.Pow(.9f, numOfTrialsCompleted);
 	}
 
 
@@ -97,10 +98,15 @@ public class TrialRunner : MonoBehaviour {
 		foreach(Weight w in trialWeights){
 			//Constrain the uniformly distributed random variable according to the temperature
 			double currentWeight = GetCurrentBestWeightValueAt(i);
-			float constraintMin = (float) (w.weightMin - currentWeight)* temperatures[i]/ti_os[i];
-			float constraintMax = (float) (w.weightMax - currentWeight)* temperatures[i]/ti_os[i];
+			Debug.Log ("Best current weight" + currentWeight);
+			float constraintMin = (float) (w.weightMin - currentWeight)* temperatures[i]/ti_os[i] * .5f;
+			Debug.Log ("constraint min weight" + constraintMin);
+		
+			float constraintMax = (float) (w.weightMax - currentWeight)* temperatures[i]/ti_os[i] * .5f;
+			Debug.Log ("constraint max weight" + constraintMax);
 			float gamma = Random.Range(constraintMin, constraintMax);
-			w.weightValue = (double)Mathf.Clamp((float)currentWeight + gamma, 0f, 1f);
+			Debug.Log ("gamma " + gamma);
+			w.weightValue = (double)Mathf.Clamp((float)currentWeight + gamma, 0.0f, 1.0f);
 			numGeneratedParameters[i++] += 1;
 		}
 	}
@@ -112,12 +118,11 @@ public class TrialRunner : MonoBehaviour {
 			//TODO: gamma's are genereated until they meet the constraints of being between weightMin and weightMax so add a loop here
 			double gamma = w.weightMax + 1f;
 			double p = w.weightMin - 1f;
-			while(double.IsNaN(p)|| p > w.weightMax || p < w.weightMin){
-				u = Random.Range (0.0f, 1.0f);
-				gamma = Mathf.Sign(u - .5f)*temperatures[i]*(Mathf.Pow((1.0f+(1.0f/temperatures[i])), Mathf.Abs(2.0f*u-1.0f))-1.0f);
-				p = GetCurrentBestWeightValueAt(i) + gamma * (w.weightMax - w.weightMin);
-			}
-			w.weightValue = p;
+			u = Random.Range (0.0f, 1.0f);
+                        gamma = Mathf.Sign(u - .5f)*temperatures[i]*(Mathf.Pow((1.0f+(1.0f/temperatures[i])), Mathf.Abs(2.0f*u-1.0f))-1.0f);
+			Debug.Log ("gamma " + gamma);
+			p = GetCurrentBestWeightValueAt(i) + gamma * (w.weightMax - w.weightMin);
+			w.weightValue = (double)Mathf.Clamp((float)p, 0.0f, 1.0f);
 			numGeneratedParameters[i++] += 1;
 		}
 	}
@@ -144,13 +149,13 @@ public class TrialRunner : MonoBehaviour {
 	}
 
 	public float evaluateRun(){
-		float x = ((float)WorldStateManager.GetNumberOfTiles() - (float)WorldStateManager.numberOfTilesSearched)/(float)WorldStateManager.GetNumberOfTiles();
-		float unsearchedTileCost = 1.0f - Mathf.Pow(x-1.0f, 2.0f);
+		float x = ((float)WorldStateManager.numberOfTilesSearched)/(float)WorldStateManager.GetNumberOfTiles();
+		float unsearchedTileCost = 1.0f - Mathf.Pow(x, 2.0f); // 1.0f - Mathf.Pow(x-1.0f, 2.0f);
 		float y = (float)WorldStateManager.numberOfCollisions;
-		float agentCollisionCost = (y > 0) ? .25f + (y-1f)*(.75f/(float) WorldStateManager.GetAgentsToGenerate) : 0f;
-		float timeCost = (float) ((WorldStateManager.GetAgentsToGenerate == WorldStateManager.numberOfCollisions) ? MAX_TRIAL_RUN_TIME : (float)WorldStateManager.timeElapsed / (float)MAX_TRIAL_RUN_TIME);
+		float agentCollisionCost = (y > 0) ? .25f + (y)*(.75f/(float) WorldStateManager.GetAgentsToGenerate) : 0f;
+		float timeCost = (float) ((WorldStateManager.GetAgentsToGenerate == WorldStateManager.numberOfCollisions) ? 1.0 : (float)WorldStateManager.timeElapsed / (float)MAX_TRIAL_RUN_TIME);
 
-		float unsearchedTileWeight = 2f;
+		float unsearchedTileWeight = 4f;
 		float timeWeight = 1f;
 		float collisionWeight = 4f;
 
@@ -191,9 +196,10 @@ public class TrialRunner : MonoBehaviour {
 		Debug.Log("Cost Temperature:" + temperature);
 
 		// Simulated annealing temperature
-		float delta = Mathf.Abs((float)eval - (float)minimumSoFar);
+		float delta = (float)eval - (float)minimumSoFar;
+
 		float trueProbability = Mathf.Min(Mathf.Exp (- (float)delta / temperature), 1.0f);
-		bool keepResult = Random.Range(0.0f, 1.0f) < trueProbability;
+		bool keepResult = trueProbability > Random.Range(0.0f, 1.0f);
 		UpdateGradients(eval);
 		if (eval < minimumSoFar || (keepResult)) {
 			weightstring = "";
@@ -215,13 +221,21 @@ public class TrialRunner : MonoBehaviour {
 				foreach (Weight w in trialWeights) {
 					bestWeights.Add (new Weight(w.weightValue));
 				}
+
+				weightstring = "";
+				foreach (Weight w in bestWeights) {
+					weightstring += w.weightValue + "\t";
+				}
+				weightstring += "\n";
+				System.IO.File.AppendAllText("./log_" + logfiletimestamp + "best_evals.txt", "" + numOfTrialsCompleted + "\t" + global_minimum + "\n");
+				System.IO.File.AppendAllText("./log_" + logfiletimestamp + "best_weights.txt", "" + numOfTrialsCompleted + "\t" + weightstring );
 			}
-//			every 100 or so trials reanneal
-			// if(numberAcceptedTrials % 25 == 0){
-			// 	//TODO: reanneal
-			// 	ReannealAllParameters ();
-			// 	ReannealCostTemperatures ();
-			// }
+//			every few trials reanneal
+			 if(numberAcceptedTrials % 25 == 0){
+			 	//TODO: reanneal
+			 	ReannealAllParameters ();
+			 	ReannealCostTemperatures ();
+			 }
 		} else {
 			copyOverCacheWeightsToCurrent ();
 		}

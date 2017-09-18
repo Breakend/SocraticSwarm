@@ -1,49 +1,54 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-	<ProductVersion>10.0.20506</ProductVersion>
-	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{18848040-AE06-B4C9-7A44-EE0AA42D1DDB}</ProjectGuid>
-	<OutputType>Library</OutputType>
-	<AppDesignerFolder>Properties</AppDesignerFolder>
-	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
-	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-	<FileAlignment>512</FileAlignment>
-	<BaseDirectory>Assets</BaseDirectory>
+    <LangVersion>4</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{D77E325F-CDC8-4C1A-1B12-9F255869D0F2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-	<DebugSymbols>true</DebugSymbols>
-	<DebugType>full</DebugType>
-	<Optimize>false</Optimize>
-	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_6_3;UNITY_4_6;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_IL2CPP;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;UNITY5_SCRIPTING_IN_UNITY4;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_OSX</DefineConstants>
-	<ErrorReport>prompt</ErrorReport>
-	<WarningLevel>4</WarningLevel>
-	<NoWarn>0169</NoWarn>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_1_1;UNITY_2017_1;UNITY_2017;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_VR;ENABLE_MODULAR_UNITYENGINE_ASSEMBLIES;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-	<DebugType>pdbonly</DebugType>
-	<Optimize>true</Optimize>
-	<OutputPath>Temp\bin\Release\</OutputPath>
-	<DefineConstants>TRACE</DefineConstants>
-	<ErrorReport>prompt</ErrorReport>
-	<WarningLevel>4</WarningLevel>
-	<NoWarn>0169</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-	<Reference Include="System" />
+    <Reference Include="System" />
     <Reference Include="System.XML" />
-	<Reference Include="System.Core" />
-	<Reference Include="System.Xml.Linq" />
-	<Reference Include="UnityEngine">
-	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
-	</Reference>
-	<Reference Include="UnityEditor">
-	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
-	</Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Agent\Agent.cs" />
@@ -58,8 +63,8 @@
      <Compile Include="Assets\Scripts\Agent\Decision\CostManager.cs" />
      <Compile Include="Assets\Scripts\Agent\Decision\Costs\AltAltitudeCost.cs" />
      <Compile Include="Assets\Scripts\Agent\Decision\Costs\AltGoalCost.cs" />
-     <Compile Include="Assets\Scripts\Agent\Decision\Costs\AltNearnessCollisionCost.cs" />
      <Compile Include="Assets\Scripts\Agent\Decision\Costs\AltitudeCost.cs" />
+     <Compile Include="Assets\Scripts\Agent\Decision\Costs\AltNearnessCollisionCost.cs" />
      <Compile Include="Assets\Scripts\Agent\Decision\Costs\BatteryLifeCost.cs" />
      <Compile Include="Assets\Scripts\Agent\Decision\Costs\CollisionCost.cs" />
      <Compile Include="Assets\Scripts\Agent\Decision\Costs\NearnessCost.cs" />
@@ -96,26 +101,26 @@
      <Compile Include="Assets\Scripts\NumUtils\NelderMeadSimplex\SimplexConstant.cs" />
      <Compile Include="Assets\Scripts\RandomOps\ByteStream.cs" />
      <Compile Include="Assets\Scripts\RandomOps\ByteStreamAsync.cs" />
-     <Compile Include="Assets\Scripts\RandomOps\CMWC4096.cs" />
      <Compile Include="Assets\Scripts\RandomOps\Circle.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\CMWC4096.cs" />
      <Compile Include="Assets\Scripts\RandomOps\Disk.cs" />
      <Compile Include="Assets\Scripts\RandomOps\Gauss.cs" />
      <Compile Include="Assets\Scripts\RandomOps\HtmlDownload.cs" />
      <Compile Include="Assets\Scripts\RandomOps\Index.cs" />
      <Compile Include="Assets\Scripts\RandomOps\IndexDistribution.cs" />
      <Compile Include="Assets\Scripts\RandomOps\KISS.cs" />
-     <Compile Include="Assets\Scripts\RandomOps\MWC256.cs" />
      <Compile Include="Assets\Scripts\RandomOps\MersenneTwister.cs" />
      <Compile Include="Assets\Scripts\RandomOps\Multi.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\MWC256.cs" />
      <Compile Include="Assets\Scripts\RandomOps\Ran2.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\Random.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\RandomDotOrg.cs" />
+     <Compile Include="Assets\Scripts\RandomOps\RandomDotOrgAsync.cs" />
      <Compile Include="Assets\Scripts\RandomOps\RanInt32.cs" />
      <Compile Include="Assets\Scripts\RandomOps\RanQD.cs" />
      <Compile Include="Assets\Scripts\RandomOps\RanSystem.cs" />
      <Compile Include="Assets\Scripts\RandomOps\RanUInt32.cs" />
      <Compile Include="Assets\Scripts\RandomOps\RanUInt32Array.cs" />
-     <Compile Include="Assets\Scripts\RandomOps\Random.cs" />
-     <Compile Include="Assets\Scripts\RandomOps\RandomDotOrg.cs" />
-     <Compile Include="Assets\Scripts\RandomOps\RandomDotOrgAsync.cs" />
      <Compile Include="Assets\Scripts\RandomOps\Set.cs" />
      <Compile Include="Assets\Scripts\RandomOps\Sphere.cs" />
      <Compile Include="Assets\Scripts\RandomOps\SumUInt32.cs" />
@@ -130,19 +135,18 @@
      <Compile Include="Assets\Scripts\SwarmOps\Globals.cs" />
      <Compile Include="Assets\Scripts\SwarmOps\LogSolutions.cs" />
      <Compile Include="Assets\Scripts\SwarmOps\Optimizer.cs" />
-     <Compile Include="Assets\Scripts\SwarmOps\OptimizerWrapper.cs" />
      <Compile Include="Assets\Scripts\SwarmOps\Optimizers\DE.cs" />
      <Compile Include="Assets\Scripts\SwarmOps\Optimizers\GD.cs" />
      <Compile Include="Assets\Scripts\SwarmOps\Optimizers\LUS.cs" />
      <Compile Include="Assets\Scripts\SwarmOps\Optimizers\MESH.cs" />
-     <Compile Include="Assets\Scripts\SwarmOps\Optimizers\MOL.cs" />
      <Compile Include="Assets\Scripts\SwarmOps\Optimizers\MetaFitness.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\Optimizers\MOL.cs" />
      <Compile Include="Assets\Scripts\SwarmOps\Optimizers\PS.cs" />
      <Compile Include="Assets\Scripts\SwarmOps\Optimizers\PSO.cs" />
      <Compile Include="Assets\Scripts\SwarmOps\Optimizers\RND.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\OptimizerWrapper.cs" />
      <Compile Include="Assets\Scripts\SwarmOps\Problem.cs" />
      <Compile Include="Assets\Scripts\SwarmOps\ProblemIndex.cs" />
-     <Compile Include="Assets\Scripts\SwarmOps\ProblemWrapper.cs" />
      <Compile Include="Assets\Scripts\SwarmOps\Problems\Ackley.cs" />
      <Compile Include="Assets\Scripts\SwarmOps\Problems\Benchmark.cs" />
      <Compile Include="Assets\Scripts\SwarmOps\Problems\Benchmarks.cs" />
@@ -163,6 +167,7 @@
      <Compile Include="Assets\Scripts\SwarmOps\Problems\Sphere.cs" />
      <Compile Include="Assets\Scripts\SwarmOps\Problems\SphereSleep.cs" />
      <Compile Include="Assets\Scripts\SwarmOps\Problems\Step.cs" />
+     <Compile Include="Assets\Scripts\SwarmOps\ProblemWrapper.cs" />
      <Compile Include="Assets\Scripts\SwarmOps\Repeat.cs" />
      <Compile Include="Assets\Scripts\SwarmOps\RepeatMin.cs" />
      <Compile Include="Assets\Scripts\SwarmOps\RepeatSum.cs" />
@@ -195,13 +200,31 @@
      <None Include="Assets\Shaders\TerrBumpAddPass.shader" />
      <None Include="Assets\Scripts\RandomOps\RandomOps.cd" />
      <None Include="Assets\Shaders\TerrBumpFirstPass.shader" />
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TestRunner">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="nunit.framework">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.3/UnityEngine.UI.dll</HintPath>
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Timeline">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.HoloLens">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-	   Other similar extension points exist, see Microsoft.Common.targets.
+       Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
   <Target Name="AfterBuild">

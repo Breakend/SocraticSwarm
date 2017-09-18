@@ -158,7 +158,12 @@ class SimpleDecisionProblem : SwarmOps.Problem
 			double distToAgent = Vector3.Distance (desiredPosition, ((AgentUpdate)this.kb.updates [i]).lastUpdate.position);
 
 			//Should be normalized to 0 between 0 and comm_range
-			if(distToAgent < 4) return false;
+			foreach (Cost c in this.costManager.constraints) {
+				if (!c.satisfiesAsConstraint ((float) distToAgent)) {
+					UnityEngine.Debug.Log ("Constraint violated with weight" + c.GetMainWeight ()); 
+					return false;
+				}
+			}
 		}
 		//TODO: this should correlate to velocity not just be generic
 		return (Vector3.Distance (desiredPosition, this.sensorModule.gps.position) < 10);

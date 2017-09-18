@@ -19,7 +19,7 @@ public class Engine : MonoBehaviour
 		{
 				
 				Vector3 force = transform.up * (maxPower * (throttle / 100));
-				rigidbody.AddForce (force);
+				GetComponent<Rigidbody>().AddForce (force);
 				Debug.DrawLine (transform.position, transform.position - force/2);
 //				Debug.DrawRay (transform.position, transform.position - force / 2, Color.green);	
 		              

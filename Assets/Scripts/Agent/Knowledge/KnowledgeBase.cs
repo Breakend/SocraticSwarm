@@ -13,7 +13,14 @@ public class KnowledgeBase  {
 	private float timeToNextUpdate = 0;
 	private const float T_UPDATE = 0.25f;
 	private const bool FILTER_RANGE_PACKETS = false;
+	private const bool RANDOM_DROPS = false;
+	private System.Random random = new System.Random ();
 
+	// Per
+	//https://ai2-s2-pdfs.s3.amazonaws.com/51a0/0d715c49ead0c6c438cb904285c3f1a891b6.pdf
+	// have a 200 meter range, with fuzzy droppout after 120 meters
+
+	private const float MESH_NETWORK_RANGE = 200; 
 	private ArrayList agents;
 
 	private BidKnowledge bidKnowledge;
@@ -99,9 +106,14 @@ public class KnowledgeBase  {
 				continue;
 			}
 			//Filter the packet out
-			if(FILTER_RANGE_PACKETS && Vector3.Distance(p.src.sensorModule.gps.position, this.agent.sensorModule.gps.position) > 200){
+			if(FILTER_RANGE_PACKETS && Vector3.Distance(p.src.sensorModule.gps.position, this.agent.sensorModule.gps.position) > MESH_NETWORK_RANGE){
 				continue;
 			}
+
+			if (RANDOM_DROPS && random.NextDouble () > 0.9) {
+				continue; // 10% chance of dropping packets randomly.
+			}
+
 			if (p.message.type == Message.MessageType.UPDATE) {
 				this.ProcessAgentUpdate (p);
 				newAgentUpdate = true;
