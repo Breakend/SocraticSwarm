@@ -17,3 +17,15 @@ The multi-agent swarm system is a robust paradigm which can drive efficient comp
 ## Usage
 
 Simply download Unity3D, import the project and press play to run simulations. Simulation parameters can be adjusted by global variables in the code.
+
+## Citation
+
+```
+@article{henderson2017swarm,
+   author = {{Henderson}, Peter and {Vertescher}, Matthew and {Meger}, David and {Coates}, Mark},
+    title = "{Cost Adaptation for Robust Decentralized Swarm Behaviour}",
+  journal = {arXiv preprint arXiv:1709.07114},
+     year = 2017,
+       url={https://arxiv.org/pdf/1709.07114.pdf}
+}
+```
